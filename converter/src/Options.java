@@ -17,6 +17,8 @@ public class Options {
                 To transfer one more time type "start"
                 If you need list of currencies type "help"
                 
+                To exit type "exit"
+                
                 """);
     }
     public static void run(String token){
@@ -48,6 +50,8 @@ public class Options {
                 help();
                 command_handler(token);
                 break;
+            case "exit":
+                System.exit(0);
             default:
                 System.out.println("Wrong operation, try again");
                 command_handler(token);
