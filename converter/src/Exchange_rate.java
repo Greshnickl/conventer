@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 public class Exchange_rate {
-    public static void show_rate(String input, String output, double count){
+    public static void show_rate(String input, String output, double count, String token){
         try {
-            URL url = new URL("https://v6.exchangerate-api.com/v6/Your-Token/latest/"+input);
+            URL url = new URL("https://v6.exchangerate-api.com/v6/"+token+"/latest/"+input);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(5000);

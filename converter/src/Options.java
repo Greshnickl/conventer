@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Options {
-    public static void main_option(){
+    public static void main_option(String token){
         commands();
-        command_handler();
+        command_handler(token);
     }
 
     public static void commands(){
@@ -19,7 +19,7 @@ public class Options {
                 
                 """);
     }
-    public static void run(){
+    public static void run(String token){
         String input = " ";
         while (!check_curency(input)){
             System.out.println("Enter input currency: ");
@@ -32,25 +32,25 @@ public class Options {
         }
         System.out.println("Enter amount of input currency: ");
         Double count = take_count();
-        Exchange_rate.show_rate(input.toUpperCase(), output.toUpperCase(), count);
+        Exchange_rate.show_rate(input.toUpperCase(), output.toUpperCase(), count, token);
     }
-    public static void command_handler(){
+    public static void command_handler(String token){
         System.out.println("Enter command: ");
         Scanner command_sc = new Scanner(System.in);
         String command = command_sc.nextLine();
 
         switch (command){
             case "start":
-                run();
-                command_handler();
+                run(token);
+                command_handler(token);
                 break;
             case "help":
                 help();
-                command_handler();
+                command_handler(token);
                 break;
             default:
                 System.out.println("Wrong operation, try again");
-                command_handler();
+                command_handler(token);
                 break;
         }
     }
