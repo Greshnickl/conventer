@@ -73,11 +73,11 @@ public class Stats {
 
 
     public void printAllStats(){
-        System.out.println("Strength="+this.strength);
-        System.out.println("Dexterity="+this.dexterity);
-        System.out.println("Constitution="+this.constitution);
-        System.out.println("Intelligence="+this.intelligence);
-        System.out.println("Wisdom="+this.wisdom);
-        System.out.println("Charisma="+this.charisma);
+        System.out.println("Strength= "+this.strength);
+        System.out.println("Dexterity= "+this.dexterity);
+        System.out.println("Constitution= "+this.constitution);
+        System.out.println("Intelligence= "+this.intelligence);
+        System.out.println("Wisdom= "+this.wisdom);
+        System.out.println("Charisma= "+this.charisma);
     }
 }

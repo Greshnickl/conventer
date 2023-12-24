@@ -3,12 +3,21 @@ public class Item {
     private int cost;
     private String description;
     private int weight;
+    private String rarity;
 
     public Item(){
-        this.name = "Default";
+        this.name = "default";
         this.cost = 0;
         this.description = "empty";
         this.weight = 0;
+        this.rarity = "Common";
+    }
+    public Item(String name, int cost, String description, int weight, String rarity){
+        this.name = name;
+        this.cost = cost;
+        this.description = description;
+        this.weight = weight;
+        this.rarity = rarity;
     }
     public String getName() {
         return name;
@@ -39,5 +48,12 @@ public class Item {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    public String getRarity() {
+        return rarity;
+    }
+    public void setRarity(String rarity){
+        this.rarity = rarity;
     }
 }

@@ -1,13 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Stats stats1 = new Stats(11, 12, 13, 14, 15, 16);
         Player player1 = new Player("Jane");
-        //player1.getStats().printAllStats();
-        Item item = new Item();
-        player1.addItem(item);
-        player1.addItem();
-        for (Item i : player1.getInventory()){
-            System.out.println(i.getName());
-        }
+        Item rock = new Item("Rock", 1, "Simple rock", 1, "Common");
+        player1.addItem(rock);
+        Weapon sword = new Weapon();
+        RangeWeapon bow = new RangeWeapon(10, 20);
+
+        System.out.println(bow.getDamage());
+
+
+
+
     }
 }

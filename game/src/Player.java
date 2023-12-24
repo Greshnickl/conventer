@@ -6,20 +6,26 @@ public class Player {
     private int xp;
     private Stats stats;
     private ArrayList<Item> inventory;
-
+    private final int[] xp_pool;
 
 
     public Player(){
-        this.level = 1;
-        this.xp = 0;
-        this.stats = new Stats();
-    }
-    public Player (String name) {
-        this.name = name;
+        this.name = "player";
+        this.hp = 10;
         this.level = 1;
         this.xp = 0;
         this.stats = new Stats();
         this.inventory = new ArrayList<Item>();
+        this.xp_pool = new int[]{0, 30, 100, 250, 500, 1000};
+    }
+    public Player (String name) {
+        this.name = name;
+        this.hp = 10;
+        this.level = 1;
+        this.xp = 0;
+        this.stats = new Stats();
+        this.inventory = new ArrayList<Item>();
+        this.xp_pool = new int[]{0, 30, 100, 250, 500, 1000};
     }
     public String getName() {
         return name;
@@ -49,8 +55,8 @@ public class Player {
         return xp;
     }
 
-    public void setXp(int xp) {
-        this.xp = xp;
+    public void addXp(int xp) {
+        this.xp+=xp;
     }
 
     public Stats getStats() {
@@ -64,7 +70,10 @@ public class Player {
     public ArrayList<Item> getInventory() {
         return inventory;
     }
-
+    public Item getItem(int index){
+        ArrayList<Item> Items = this.inventory;
+        return Items.get(index);
+    }
     public void setInventory(ArrayList<Item> inventory) {
         this.inventory = inventory;
     }
@@ -74,4 +83,8 @@ public class Player {
     public void addItem(){
         this.inventory.add(new Item());
     }
+
+
+    
+
 }
