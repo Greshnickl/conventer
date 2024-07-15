@@ -3,21 +3,35 @@ public class Item {
     private int cost;
     private String description;
     private int weight;
-    private String rarity;
+    private enum Rarity{
+        COMMON,
+        RARE,
+        ULTRA_RARE,
+        EPIC,
+        LEGENDARY
+    }
+    private Rarity rarity;
+
 
     public Item(){
         this.name = "default";
         this.cost = 0;
         this.description = "empty";
         this.weight = 0;
-        this.rarity = "Common";
+        this.rarity = Rarity.COMMON;
     }
     public Item(String name, int cost, String description, int weight, String rarity){
         this.name = name;
         this.cost = cost;
         this.description = description;
         this.weight = weight;
-        this.rarity = rarity;
+        switch (rarity){
+            case "COMMON": this.rarity = Rarity.COMMON; break;
+            case "RARE": this.rarity = Rarity.RARE; break;
+            case "ULTRA_RARE": this.rarity = Rarity.ULTRA_RARE; break;
+            case "EPIC": this.rarity = Rarity.EPIC; break;
+            case "LEGENDARY": this.rarity = Rarity.LEGENDARY; break;
+        }
     }
     public String getName() {
         return name;
@@ -50,10 +64,10 @@ public class Item {
         this.weight = weight;
     }
 
-    public String getRarity() {
+    public Rarity getRarity() {
         return rarity;
     }
-    public void setRarity(String rarity){
+    public void setRarity(Rarity rarity) {
         this.rarity = rarity;
     }
 }
